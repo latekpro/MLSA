@@ -34,8 +34,8 @@ jobs:
         run: Set-Location -Path "Marathon_Server_MLSA-master"
 
       - name: Build with dotnet
-        run: 
-         dotnet build --configuration Release -p:Marathon_Server_MLSA-master/Marathon.Server.csproj
+        run: dotnet build --configuration Release -p:Marathon_Server_MLSA-master/Marathon.Server.csproj
+
 
 
       - name: dotnet publish
