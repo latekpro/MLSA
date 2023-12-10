@@ -26,6 +26,9 @@ jobs:
         run: |
           Get-Location
           Get-ChildItem -Path .
+
+      - name: Set working directory
+        run: Set-Location -Path "Marathon_Server_MLSA-master"    
           
       - name: Build with dotnet
         run: 
