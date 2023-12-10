@@ -28,18 +28,13 @@ jobs:
           Get-ChildItem -Path .
 
       - name: List current directory contents
-        run: Get-ChildItem -Path .
-
-      - name: Set working directory
-        run: Set-Location -Path "Marathon_Server_MLSA-master"
+        run: Get-ChildItem -Path 
 
       - name: Build with dotnet
         run: dotnet build --configuration Release -p:Marathon_Server_MLSA-master/Marathon.Server.csproj
 
-
-
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp -p:Marathon_Server_MLSA-master/Marathon.Server.csproj
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
