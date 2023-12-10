@@ -22,10 +22,14 @@ jobs:
           dotnet-version: '7.0'
           include-prerelease: true
 
-      - name: Build with dotnet
+      - name: Print current directory
         run: |
-         Set-Location Marathon_Server_MLSA_master
-         dotnet build --configuration Release
+          Get-Location
+          Get-ChildItem -Path .
+          
+      - name: Build with dotnet
+        run: 
+         dotnet build --configuration Release 
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
