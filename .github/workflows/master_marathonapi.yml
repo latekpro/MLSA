@@ -26,7 +26,8 @@ jobs:
         run: dotnet build --configuration Release ./Marathon_Server_MLSA-master/Marathon.Server.csproj
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o C:\Users\runneradmin\AppData\Local\Microsoft\dotnet/myapp ./Marathon_Server_MLSA-master/Marathon.Server.csproj
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp ./Marathon_Server_MLSA-master/Marathon.Server.csproj
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
