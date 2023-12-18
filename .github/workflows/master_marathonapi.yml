@@ -47,6 +47,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+
+      - name: List artifact contents
+        run: |
+         ls ${{ github.workspace }}/.net-app
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
