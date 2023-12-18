@@ -50,7 +50,8 @@ jobs:
 
       - name: List artifact contents
         run: |
-         ls ${{ github.workspace }}/.net-app
+         ls ${{ github.workspace }}\.net-app
+
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
