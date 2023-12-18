@@ -23,7 +23,9 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release -p:./Marathon_Server_MLSA-master/Marathon.Server.csproj
+        run: |
+          cd ./Marathon_Server_MLSA-master
+          dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp -p:./Marathon_Server_MLSA-master/Marathon.Server.csproj
