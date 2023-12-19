@@ -9,6 +9,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+ AZURE_WEBAPP_PACKAGE_PATH: '.'
+
 jobs:
   build:
     runs-on: windows-latest
@@ -54,5 +57,5 @@ jobs:
         with:
           app-name: 'marathonapi'
           slot-name: 'Production'
-          package: ${{ github.workspace }}/.net-app
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/.net-app
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD46123993C74988A15B3E1A8B602470 }}
