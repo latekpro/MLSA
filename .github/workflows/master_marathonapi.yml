@@ -48,10 +48,6 @@ jobs:
         with:
           name: .net-app
 
-      - name: Debug downloaded artifact
-        run: |
-           ls ${{ github.workspace }}\.net-app
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
